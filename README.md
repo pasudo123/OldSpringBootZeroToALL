@@ -1,2 +1,5 @@
-# SpringBootZeroToAll
-SpringBoot, 공부하면서 모르는 것들 그냥 다 기록하자 
+# SpringBootZeroToAll 
+2018년 12월 01일 ~
+
+## Study
+1. [Building Java Projects With Gradle](https://spring.io/guides/gs/gradle/#initial)
