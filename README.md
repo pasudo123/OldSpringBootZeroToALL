@@ -1,4 +1,4 @@
-# SpringBootZeroToAll 
+# SpringBootZeroToALL
 2018년 12월 01일 ~
 
 ## Study
