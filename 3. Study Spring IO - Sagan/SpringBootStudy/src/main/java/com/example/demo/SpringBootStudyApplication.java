@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan({"edu.double.*", "com.exaple.*"})
+@ComponentScan({"com.doubler.*", "com.exaple.*"})
 @SpringBootApplication
 public class SpringBootStudyApplication {
 
