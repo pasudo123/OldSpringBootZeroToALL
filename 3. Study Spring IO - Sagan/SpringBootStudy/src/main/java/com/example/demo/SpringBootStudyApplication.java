@@ -1,12 +1,21 @@
 package com.example.demo;
 
 import org.apache.log4j.Logger;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@ComponentScan({"com.doubler.*", "com.exaple.*"})
+import com.doubler.customer.Customer;
+import com.doubler.customer.CustomerRepository;
+
+@ComponentScan({"com.doubler.demo", "com.example.*"})
+@EntityScan({"com.doubler.customer", "com.example.*"})
+@EnableJpaRepositories({"com.doubler.customer", "com.example.*"})
 @SpringBootApplication
 public class SpringBootStudyApplication {
 
@@ -14,10 +23,38 @@ public class SpringBootStudyApplication {
 	
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = SpringApplication.run(SpringBootStudyApplication.class, args);
-		
-//		for(String name : applicationContext.getBeanDefinitionNames()) {
-//			logger.info(name);
-//		}
-		
+	}
+	
+	@Bean
+	public CommandLineRunner demo(CustomerRepository repository) {
+		return (args) ->{
+			// save a couple of customers
+			repository.save(new Customer("Jack", "Bauer"));
+			repository.save(new Customer("Chloe", "'O'Brian"));
+			repository.save(new Customer("Kim", "Bauer"));
+			repository.save(new Customer("David", "Pamler"));
+			repository.save(new Customer("Michelle", "Dessler"));
+			
+			// fetch all customers
+			logger.info("Customers found with findAll()");
+			logger.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			
+			for(Customer customer : repository.findAll()) {
+				logger.info(customer.toString());
+			}
+			
+			logger.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			
+			
+			// fetch customers by last name
+			logger.info("Customer found with findByLastName('Bauer'):");
+			logger.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			
+			repository.findByLastName("Bauer").forEach(bauer -> {
+				logger.info(bauer.toString());
+			});
+			
+			logger.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+		};
 	}
 }

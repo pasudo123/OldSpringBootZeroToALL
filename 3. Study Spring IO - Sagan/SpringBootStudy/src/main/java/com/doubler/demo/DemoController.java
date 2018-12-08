@@ -7,25 +7,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 @Controller
 @RequestMapping("/demo")
 public class DemoController {
 
-	DemoService demoService;
+	private DemoService demoService;
 	
 	private static final Logger logger = Logger.getLogger(DemoController.class);
 	
 	@Autowired
 	public DemoController(DemoService demoService) {
+		logger.info("[doubler Log] ㅡㅡ> DemoController 생성자 호출");
 		this.demoService = demoService;
-		logger.info("ㅡㅡ DemoController 호출");
 	}
 	
 	@RequestMapping(method = {RequestMethod.GET})
 	@ResponseBody
 	public String demo() {
+		logger.info("[doubler Log] ㅡㅡ> DemoController 에서 RequestMapping 으로 \"/demo\" URL 접근");
 		return "demo";
 	}
+	
+//	@RequestMapping(value = "/{demoName}", method = {RequestMethod.GET, RequestMethod.POST})
 	
 }
