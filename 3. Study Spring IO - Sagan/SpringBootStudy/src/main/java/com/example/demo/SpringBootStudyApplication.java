@@ -13,9 +13,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.doubler.customer.Customer;
 import com.doubler.customer.CustomerRepository;
 
-@ComponentScan({"com.doubler.demo", "com.example.*"})
-@EntityScan({"com.doubler.customer", "com.example.*"})
-@EnableJpaRepositories({"com.doubler.customer", "com.example.*"})
+@EntityScan({"com.doubler.*", "com.example.*"})
+@EnableJpaRepositories({"com.doubler.*", "com.example.*"})
+@ComponentScan({"com.doubler.*", "com.example.*"})
 @SpringBootApplication
 public class SpringBootStudyApplication {
 
@@ -25,6 +25,7 @@ public class SpringBootStudyApplication {
 		ApplicationContext applicationContext = SpringApplication.run(SpringBootStudyApplication.class, args);
 	}
 	
+	/**
 	@Bean
 	public CommandLineRunner demo(CustomerRepository repository) {
 		return (args) ->{
@@ -57,4 +58,5 @@ public class SpringBootStudyApplication {
 			logger.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 		};
 	}
+	**/
 }
