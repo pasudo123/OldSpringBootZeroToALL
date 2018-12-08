@@ -8,3 +8,4 @@
 
 ### 3. [Study Spring IO - Sagan](https://github.com/pasudo123/SpringBootZeroToALL/blob/master/3.%20Study%20Spring%20IO%20-%20Sagan/README.md)
 1. [Accessing Data with JPA](https://github.com/pasudo123/SpringBootZeroToALL/blob/master/3.%20Study%20Spring%20IO%20-%20Sagan/3.1%20Study%20Spring%20IO%20-%20Accessing%20Data%20with%20JPA.md)
+2. [Accessing data with MySQL](https://github.com/pasudo123/SpringBootZeroToALL/blob/master/3.%20Study%20Spring%20IO%20-%20Sagan/3.2%20Study%20Spring%20IO%20-%20Accessing%20data%20with%20MySQL.md)
