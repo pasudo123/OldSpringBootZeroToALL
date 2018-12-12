@@ -1,5 +1,5 @@
-package com.doubler.demo;
-
+//package com.doubler.demo;
+//
 //@Entity
 //public class Demo {
 //
