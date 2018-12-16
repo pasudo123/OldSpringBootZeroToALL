@@ -1,20 +1,9 @@
-# Study Spring IO - Sagan
-[Study Spring IO - Sagan](https://github.com/spring-io/sagan)
+# Study JPA
 
-## 참고링크
-- [spring.io 를 통해 배우는 spring 개발사례](https://www.slideshare.net/daehwanlee/springcamp2015-pdf)
-- [spring tools 4](https://spring.io/tools)
+### [JPA 란 ?](https://pasudo123.tistory.com/271)
 
-## sagan project 구조
-```txt
-sagan
-|
-├ sagan-client  (클라이언트 모듈)
-|
-├ sagan-common  (공통 모듈)
-|
-├ sagan-lndexr  (검색 모듈)
-|
-└ sagan-site    (웹 애플리케이션 모듈)
-```
-- 사실 아직 정확히 파악하지 못함. STS 4 버전 설치하고 난 뒤, 어떻게 공부하는 것이 좋을지 생각하고 있음.
+### [1. Accessing Data with JPA](https://github.com/pasudo123/SpringBootZeroToALL/blob/master/3.%20Study%20JPA/3.1%20Study%20Spring%20IO%20-%20Accessing%20data%20with%20JPA.md)
+
+### [2. Accessing Data with MySQL](https://github.com/pasudo123/SpringBootZeroToALL/blob/master/3.%20Study%20JPA/3.2%20Study%20Spring%20IO%20-%20Accessing%20data%20with%20MySQL.md)
+
+### [3. JPA 이용, TODO 프로그램 만들기]()
