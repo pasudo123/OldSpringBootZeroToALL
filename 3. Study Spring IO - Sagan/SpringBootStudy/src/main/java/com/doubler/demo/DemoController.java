@@ -8,15 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.demo.SpringBootStudyApplication;
-
 @Controller
 @RequestMapping("/demo")
 public class DemoController {
 
-	private DemoService demoService;
+	private DemoService demoService = null;
 	
-	private static final Logger logger = LogManager.getLogger(SpringBootStudyApplication.class);
+	private static final Logger logger = LogManager.getLogger(DemoController.class);
 	
 	@Autowired
 	public DemoController(DemoService demoService) {
