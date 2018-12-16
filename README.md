@@ -2,9 +2,11 @@
 2018년 12월 01일 ~
 
 ## Study
-### 1. [Building Java Projects With Gradle](https://github.com/pasudo123/SpringBootZeroToALL/tree/master/1.%20Building%20Java%20Projects%20With%20Gradle)
+### 1. Building Java Projects With Gradle
+  - [바로가기](https://github.com/pasudo123/SpringBootZeroToALL/tree/master/1.%20Building%20Java%20Projects%20With%20Gradle)
 
-### 2. [Building an Application with Spring Boot](https://github.com/pasudo123/SpringBootZeroToALL/tree/master/2.%20Building%20an%20Application%20with%20Spring%20Boot)
+### 2. Building an Application with Spring Boot
+  - [바로가기](https://github.com/pasudo123/SpringBootZeroToALL/tree/master/2.%20Building%20an%20Application%20with%20Spring%20Boot)
 
 ### 3. JPA 공부
   1. [JPA 알아보기(블로그 글)](https://pasudo123.tistory.com/271?category=736753)
