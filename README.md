@@ -9,4 +9,4 @@
 ### 3. [JPA 공부](https://github.com/pasudo123/SpringBootZeroToALL/blob/master/3.%20Study%20JPA/README.md)
 
 ## Reference, Open Source
-1. [Sagan](https://github.com/spring-io/sagan)
+1. [Sagan](https://github.com/pasudo123/SpringBootZeroToALL/blob/master/Sagan/README.md)
