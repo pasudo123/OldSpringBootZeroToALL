@@ -1,4 +1,4 @@
-package com.doubler.jpa.user;
+package com.doubler.jpa.extendtodo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
