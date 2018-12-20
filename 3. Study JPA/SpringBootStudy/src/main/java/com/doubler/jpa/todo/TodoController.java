@@ -23,6 +23,9 @@ public class TodoController {
 	
 	@Autowired
 	public TodoController(TodoRepository todoRepository) {
+		
+		logger.info("[doubler Log] ㅡㅡ> TodoController 생성자 호출");
+		
 		this.todoRepository = todoRepository;
 	}
 

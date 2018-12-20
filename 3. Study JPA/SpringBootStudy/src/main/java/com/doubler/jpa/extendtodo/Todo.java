@@ -1,5 +1,6 @@
 package com.doubler.jpa.extendtodo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
 import com.doubler.jpa.extendtodo.User;
 
 @Entity
-@Table(name = "TODO")
+@Table(name = "EXTEND_TODO")
 public class Todo {
 	
 	@Id
@@ -21,7 +22,7 @@ public class Todo {
 	private String title;
 	private String content;
 	
-	@ManyToOne(targetEntity=User.class, fetch=FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "USER_ID")
 	private User user;
 	

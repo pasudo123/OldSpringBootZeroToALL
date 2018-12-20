@@ -19,7 +19,7 @@ public class ExtendTodoController {
 	@Autowired
 	public ExtendTodoController(TodoRepository todoRepository, UserRepository userRepository) {
 		
-		logger.info("ExtendTodoController 생성자 호출");
+		logger.info("[doubler Log] ㅡㅡ> ExtendTodoController 생성자 호출");
 		
 		this.todoRepository = todoRepository;
 		this.userRepository = userRepository;
@@ -67,6 +67,4 @@ public class ExtendTodoController {
 		
 		return null;
 	}
-	
-	
 }

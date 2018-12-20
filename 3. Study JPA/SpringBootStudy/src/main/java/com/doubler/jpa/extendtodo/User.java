@@ -1,9 +1,13 @@
 package com.doubler.jpa.extendtodo;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +19,9 @@ public class User {
 	private Long id;
 	private String name;
 	private int age;
+	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	private List<Todo> todos;
 	
 	protected User() {}
 	

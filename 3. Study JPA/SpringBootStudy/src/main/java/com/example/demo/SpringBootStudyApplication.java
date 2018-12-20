@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@EntityScan({"com.doubler.*"})
-@EnableJpaRepositories({"com.doubler.*"})
-@ComponentScan({"com.doubler.*"})
+@EntityScan({"com.doubler.*", "com.doubler.jpa.*"})
+@EnableJpaRepositories({"com.doubler.*", "com.doubler.jpa.*"})
+@ComponentScan({"com.doubler.*", "com.doubler.jpa.*"})
 @SpringBootApplication
 public class SpringBootStudyApplication {
 
