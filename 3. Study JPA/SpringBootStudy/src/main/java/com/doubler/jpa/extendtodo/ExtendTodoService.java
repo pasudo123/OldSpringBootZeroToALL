@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TodoService {
+public class ExtendTodoService {
 
 	private TodoRepository todoRepository;
 	private UserRepository userRepository;
 	
 	@Autowired
-	public TodoService(TodoRepository todoRepository, UserRepository userRepository) {
+	public ExtendTodoService(TodoRepository todoRepository, UserRepository userRepository) {
 		this.todoRepository = todoRepository;
 		this.userRepository = userRepository;
 	}

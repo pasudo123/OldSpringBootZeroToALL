@@ -16,14 +16,13 @@ public class ExtendTodoController {
 	
 	public static final Logger logger = LogManager.getLogger(ExtendTodoController.class);
 	
-	private TodoService todoService;
+	private ExtendTodoService extendTodoService;
 	
 	@Autowired
-	public ExtendTodoController(TodoRepository todoRepository, UserRepository userRepository, TodoService todoService) {
+	public ExtendTodoController(ExtendTodoService extendTodoService) {
 		
 		logger.info("[doubler Log] ㅡㅡ> ExtendTodoController 생성자 호출");
-		
-		this.todoService = todoService;
+		this.extendTodoService = extendTodoService;
 	}
 	
 	@RequestMapping(value = "/add")
@@ -32,7 +31,7 @@ public class ExtendTodoController {
 	@RequestParam(value = "name", defaultValue = "master", required = false) String name,
 	@RequestParam(value = "age", defaultValue = "100", required = false) int age) {
 	
-		return todoService.addUserTodo(name, age);
+		return extendTodoService.addUserTodo(name, age);
 
 	}
 	
@@ -64,7 +63,7 @@ public class ExtendTodoController {
 	@RequestParam(value = "name", defaultValue = "master", required = false) String name,
 	@RequestParam(value = "age", defaultValue = "100", required = false) int age) {
 		
-		return todoService.getUserTodoList();
+		return extendTodoService.getUserTodoList();
 		
 	}
 }
