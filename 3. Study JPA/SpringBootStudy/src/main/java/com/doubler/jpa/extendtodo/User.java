@@ -3,6 +3,7 @@ package com.doubler.jpa.extendtodo;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,8 +16,10 @@ import javax.persistence.Table;
 public class User {
 	
 	@Id
+	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long userId;
+	
 	private String name;
 	private int age;
 	
@@ -32,8 +35,8 @@ public class User {
 
 	// getter() & setter()
 	
-	public Long getId() {
-		return id;
+	public Long getUserId() {
+		return userId;
 	}
 
 	public String getName() {
@@ -44,8 +47,8 @@ public class User {
 		return age;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public void setName(String name) {

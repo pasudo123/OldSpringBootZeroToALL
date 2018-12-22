@@ -1,6 +1,7 @@
 package com.doubler.jpa.extendtodo;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,12 +18,14 @@ import com.doubler.jpa.extendtodo.User;
 public class Todo {
 	
 	@Id
+	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long todoId;
+	
 	private String title;
 	private String content;
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+	@ManyToOne(targetEntity = User.class, cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "USER_ID")
 	private User user;
 	
@@ -36,9 +39,13 @@ public class Todo {
 		this.user = user;
 	}
 
-	// getter() & setter()
-	public Long getId() {
-		return id;
+	/**
+	 * GETTER() 
+	 * @return
+	 */
+	
+	public Long getTodoId() {
+		return todoId;
 	}
 
 	public String getTitle() {
@@ -48,16 +55,8 @@ public class Todo {
 	public String getContent() {
 		return content;
 	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
+	
+	public User getUser() {
+		return user;
 	}
 }
