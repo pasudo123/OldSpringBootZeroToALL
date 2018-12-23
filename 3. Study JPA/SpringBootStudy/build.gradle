@@ -42,5 +42,11 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	
 	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	// group
+	// name
+	// version 순으로 작성
 	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.7'
+	
+	// 짧게 쓰면,
+	// compile('group:name:version')
 }
