@@ -48,13 +48,28 @@ public class TodoController {
 		return "Add Todo";
 	}
 	
+	@RequestMapping(value = "/modify")
+	@ResponseBody
+	public String modifyUserTodo() {
+		
+		
+		return "Modift Todo";
+	}
+	
 	@RequestMapping(value = "/delete")
 	@ResponseBody
 	public String deleteUserTodo(
 	@RequestParam (value = "name", required = false) String name) {
 		
 		
-		
 		return "Delete Todo";
+	}
+	
+	@RequestMapping(value = "/select")
+	@ResponseBody
+	public String selectUserTodo() {
+		
+		
+		return "Select Todo";
 	}
 }
