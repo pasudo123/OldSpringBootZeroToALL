@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(force = true)
 @ToString
 @Entity
 @Table(name = "TODO")
@@ -38,6 +38,13 @@ public class Todo {
 	private User user;
 	
 	public Todo(String title, String content, User user) {
+		this.title = title;
+		this.content = content;
+		this.user = user;
+	}
+	
+	public Todo(Long todoId, String title, String content, User user) {
+		this.todoId = todoId;
 		this.title = title;
 		this.content = content;
 		this.user = user;

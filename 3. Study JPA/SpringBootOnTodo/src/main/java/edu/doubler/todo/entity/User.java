@@ -18,7 +18,7 @@ import lombok.ToString;
  *
  */
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(force = true)
 @ToString
 @Entity
 @Table(name = "USER")
@@ -39,6 +39,12 @@ public class User {
 	// @Column(name = "USER_PW") private String userPw;
 	
 	public User(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	public User(Long userId, String name, int age) {
+		this.userId = userId;
 		this.name = name;
 		this.age = age;
 	}

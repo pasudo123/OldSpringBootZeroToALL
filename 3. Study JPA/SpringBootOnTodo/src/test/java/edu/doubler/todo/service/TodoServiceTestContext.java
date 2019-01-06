@@ -2,6 +2,7 @@ package edu.doubler.todo.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,18 +28,29 @@ public class TodoServiceTestContext {
 	@MockBean
 	private TodoRepository todoRepository;
 	
+	/**
+	 * given / when / then 으로 이어지는 형태 <br>
+	 * 추후에 스프링 내장 DB 로 구현하는 것이 효율적일 수도 있음 <br>
+	 */
 	@Test
 	public void simpleTodoSerivceTest() {
+		
+		/**
+		 * (1) given <br>
+		 */
 		List<Todo> expectedTodoList = Arrays.asList(
-			new Todo("첫번째 타이틀", "첫번째 내용", new User("토마토", 10)),
-			new Todo("두번째 타이틀", "두번째 내용", new User("고구마", 20)),
-			new Todo("세번째 타이틀", "세번째 내용", new User("오렌지", 30))
+			new Todo(null, "첫번째 타이틀", "첫번째 내용", new User(null, "토마토", 10)),
+			new Todo(null, "두번째 타이틀", "두번째 내용", new User(null, "고구마", 20)),
+			new Todo(null, "세번째 타이틀", "세번째 내용", new User(null, "오렌지", 30))
 		);
 		
-		// given(todoRepository.findAll()).willReturn(expectedTodoList);
-		
+		when(todoRepository.findAll()).thenReturn(expectedTodoList);
+
+		/**
+		 * (2) when <br>
+		 * (3) then <br>
+		 */
 		List<Todo> todoList = todoService.getTodoList();
 		assertThat(todoList).isEqualTo(expectedTodoList);
 	}
-	
 }
