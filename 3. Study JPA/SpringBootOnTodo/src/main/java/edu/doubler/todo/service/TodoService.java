@@ -1,5 +1,6 @@
 package edu.doubler.todo.service;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +47,37 @@ public class TodoService {
 	}
 
 	/**
+	 * 할 밀 수정 모듈 <br>
+	 * @param name
+	 * @param title
+	 * @param content
+	 * @return boolean
+	 */
+	public boolean updateTodo(String name, String title, String content) {
+		
+		logger.info("조회 -- name :: " + name);
+		logger.info("변경 -- title :: " + title);
+		logger.info("변경 -- content :: " + content);
+		
+		List<BigInteger> todoIdList = todoRepository.findTodoIdByUserName(name);
+		
+		if(todoIdList.size() == 0) {
+			return false;
+		}
+		
+		// https://stackoverflow.com/questions/39741102/how-to-beautifully-update-a-jpa-entity-in-spring-data
+		for(BigInteger todoId : todoIdList) {
+			Todo todo = todoRepository.getOne(todoId.longValue());
+			
+			todo.setTitle(title);
+			todo.setContent(content);
+			todoRepository.save(todo);
+		}
+		
+		return true;
+	}
+	
+	/**
 	 * 할 일 목록 획득 모듈 <br>
 	 * @return
 	 */
@@ -65,8 +97,6 @@ public class TodoService {
 		
 		List<UserTodoDto> userTodoList = new ArrayList<UserTodoDto>();
 	
-		logger.info("----> Full [TodoList] :: " + todoList.size());
-		
 		for(Todo todo : todoList) {
 			
 			String title = todo.getTitle();
@@ -75,8 +105,6 @@ public class TodoService {
 			
 			userTodoList.add(new UserTodoDto(user.getName(), user.getAge(), title, content));
 		}
-		
-		logger.info("----> Full [UserTodoList] :: " + userTodoList.size());
 		
 		return userTodoList;
 	}
