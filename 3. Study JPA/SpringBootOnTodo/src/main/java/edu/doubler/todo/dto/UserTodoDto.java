@@ -24,7 +24,4 @@ public class UserTodoDto {
 		this.title = title;
 		this.content = content;
 	}
-	
-	
-	
 }

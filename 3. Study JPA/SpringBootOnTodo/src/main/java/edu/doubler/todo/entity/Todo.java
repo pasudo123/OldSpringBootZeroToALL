@@ -42,6 +42,4 @@ public class Todo {
 		this.content = content;
 		this.user = user;
 	}
-	
-	
 }

@@ -1,5 +1,7 @@
 package edu.doubler.todo.controller;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import edu.doubler.todo.dto.UserTodoDto;
+import edu.doubler.todo.entity.Todo;
 import edu.doubler.todo.service.TodoService;
 
 /**
@@ -67,10 +71,13 @@ public class TodoController {
 	
 	@RequestMapping(value = "/select")
 	@ResponseBody
-	public String selectUserTodo() {
+	public List<UserTodoDto> selectUserTodo() {
 		
+		logger.info("----> Select User TodoList");
 		
+		List<Todo> todoList = todoService.getTodoList();
+		List<UserTodoDto> userTodoList = todoService.getUserListOnTodo(todoList);
 		
-		return "Select Todo";
+		return userTodoList;
 	}
 }
