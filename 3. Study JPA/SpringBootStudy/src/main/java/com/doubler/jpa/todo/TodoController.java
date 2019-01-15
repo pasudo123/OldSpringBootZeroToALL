@@ -30,7 +30,7 @@ public class TodoController {
 	}
 
 	/**
-	 * JPA TODO 할 일 등록 <br>
+	 * JPA 할 일 등록 <br>
 	 * @param title
 	 * @param content
 	 * @param author
@@ -51,7 +51,7 @@ public class TodoController {
 	}
 	
 	/**
-	 * JPA TODO 할 일 조회 <br>
+	 * JPA 할 일 조회 <br>
 	 * @param id
 	 * @return
 	 */
@@ -68,7 +68,7 @@ public class TodoController {
 	}
 	
 	/**
-	 * JPA TODO 할 일 [전체] 조회 <br>
+	 * JPA 할 일 [전체] 조회 <br>
 	 * @return
 	 */
 	public List<Todo> selectAll(){
@@ -78,7 +78,7 @@ public class TodoController {
 	}
 
 	/**
-	 * JPA TODO 할 일 [1 개] 조회 <br>
+	 * JPA 할 일 [1 개] 조회 <br>
 	 * @param id
 	 * @return
 	 */
@@ -96,7 +96,7 @@ public class TodoController {
 	}
 	
 	/**
-	 * JPA TODO 할 일 [한 개] 삭제 <br>
+	 * JPA 할 일 [한 개] 삭제 <br>
 	 * @return
 	 */
 	@RequestMapping( value = "/delete", method = RequestMethod.GET )
@@ -116,7 +116,7 @@ public class TodoController {
 	}
 	
 	/**
-	 * JPA TODO 할 일 수정 <br>
+	 * JPA 할 일 수정 <br>
 	 * @param id
 	 * @param title
 	 * @param content

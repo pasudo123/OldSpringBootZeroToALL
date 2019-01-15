@@ -1,6 +1,5 @@
 package edu.doubler.todo.service;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,19 +58,34 @@ public class TodoService {
 		logger.info("변경 -- title :: " + title);
 		logger.info("변경 -- content :: " + content);
 		
-		List<BigInteger> todoIdList = todoRepository.findTodoIdByUserName(name);
+		List<Integer> todoIdList = todoRepository.findTodoIdByUserName(name);
 		
 		if(todoIdList.size() == 0) {
 			return false;
 		}
 		
 		// https://stackoverflow.com/questions/39741102/how-to-beautifully-update-a-jpa-entity-in-spring-data
-		for(BigInteger todoId : todoIdList) {
-			Todo todo = todoRepository.getOne(todoId.longValue());
+		for(Integer todoId : todoIdList) {
+			Todo todo = todoRepository.getOne(todoId);
 			
 			todo.setTitle(title);
 			todo.setContent(content);
 			todoRepository.save(todo);
+		}
+		
+		return true;
+	}
+	
+	public boolean deleteTodo(String name) {
+		
+		List<Integer> todoIdList = todoRepository.findTodoIdByUserName(name);
+		
+		if(todoIdList.size() == 0) {
+			return false;
+		}
+		
+		for(Integer todoId : todoIdList) {
+			todoRepository.deleteById(todoId);
 		}
 		
 		return true;

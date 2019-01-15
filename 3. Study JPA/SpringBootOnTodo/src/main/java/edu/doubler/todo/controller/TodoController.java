@@ -73,10 +73,17 @@ public class TodoController {
 	@ResponseBody
 	public String deleteUserTodo(
 	@PathVariable String name) {
-		
+	
+		logger.info("----> 유저의 할 일을 삭제하는 컨트롤러 진입");
 		// TODO 삭제 모듈 구현.
 		
-		return "Delete Todo";
+		boolean isDelete = todoService.deleteTodo(name);
+		
+		if(!isDelete) {
+			return "Not been Deleted";
+		}
+		
+		return "Deleted Todo";
 	}
 	
 	@RequestMapping(value = "/select")

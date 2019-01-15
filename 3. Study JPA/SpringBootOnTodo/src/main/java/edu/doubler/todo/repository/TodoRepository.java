@@ -1,6 +1,5 @@
 package edu.doubler.todo.repository;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import edu.doubler.todo.entity.Todo;
 
 @Repository
-public interface TodoRepository extends JpaRepository<Todo, Long>{
+public interface TodoRepository extends JpaRepository<Todo, Integer>{
 	
 	// http://appsdeveloperblog.com/specific-columns-jpa-native-query/
 	// https://stackoverflow.com/questions/24710626/jpa-query-selecting-only-specific-columns-without-using-criteria-query/24710759
@@ -20,7 +19,7 @@ public interface TodoRepository extends JpaRepository<Todo, Long>{
 	@Query(
 	value = "SELECT TODO_ID FROM TODO WHERE USER_ID IN ( SELECT USER_ID FROM USER WHERE NAME = :name )", 
 	nativeQuery = true)
-	List<BigInteger> findTodoIdByUserName(@Param("name") String name);
+	List<Integer> findTodoIdByUserName(@Param("name") String name);
 	
 	/**
 	 * (1) QueryDsl 방식도 있음

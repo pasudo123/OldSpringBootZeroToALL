@@ -27,7 +27,7 @@ public class User {
 	@Id
 	@Column(name = "USER_ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long userId;
+	private Integer userId;
 	
 	@Column(name = "NAME") 
 	private String name;
@@ -43,7 +43,7 @@ public class User {
 		this.age = age;
 	}
 	
-	public User(Long userId, String name, int age) {
+	public User(Integer userId, String name, int age) {
 		this.userId = userId;
 		this.name = name;
 		this.age = age;

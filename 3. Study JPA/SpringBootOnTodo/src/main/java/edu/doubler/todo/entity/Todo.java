@@ -27,7 +27,7 @@ public class Todo {
 	@Id
 	@Column(name = "TODO_ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long todoId;
+	private Integer todoId;
 	
 	@Column(name = "TITLE") 
 	private String title;
@@ -45,7 +45,7 @@ public class Todo {
 		this.user = user;
 	}
 	
-	public Todo(Long todoId, String title, String content, User user) {
+	public Todo(Integer todoId, String title, String content, User user) {
 		this.todoId = todoId;
 		this.title = title;
 		this.content = content;
