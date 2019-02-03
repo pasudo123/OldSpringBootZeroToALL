@@ -76,6 +76,11 @@ public class TodoService {
 		return true;
 	}
 	
+	/**
+	 * 할 일 삭제 모듈 <br>
+	 * @param name
+	 * @return
+	 */
 	public boolean deleteTodo(String name) {
 		
 		List<Integer> todoIdList = todoRepository.findTodoIdByUserName(name);

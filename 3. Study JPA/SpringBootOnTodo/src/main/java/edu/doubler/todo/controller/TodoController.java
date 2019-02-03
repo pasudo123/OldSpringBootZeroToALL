@@ -16,7 +16,7 @@ import edu.doubler.todo.entity.Todo;
 import edu.doubler.todo.service.TodoService;
 
 /**
- * 사용자 할 일 Controller <br>
+ * 사용자 할 일 Controller <p>
  * @since 2018 12 23
  * @author PASUDO
  *
@@ -58,8 +58,6 @@ public class TodoController {
 		
 		logger.info("----> 유저의 할 일을 수정하는 컨트롤러 진입");
 		
-		// TODO Pathvariable 에서 띄어쓰기 문제??
-		
 		boolean isUpdate = todoService.updateTodo(name, title, content);
 		
 		if(!isUpdate) {
@@ -75,7 +73,6 @@ public class TodoController {
 	@PathVariable String name) {
 	
 		logger.info("----> 유저의 할 일을 삭제하는 컨트롤러 진입");
-		// TODO 삭제 모듈 구현.
 		
 		boolean isDelete = todoService.deleteTodo(name);
 		
