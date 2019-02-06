@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -43,6 +44,7 @@ public class User {
 		this.age = age;
 	}
 	
+	@Builder
 	public User(Integer userId, String name, int age) {
 		this.userId = userId;
 		this.name = name;

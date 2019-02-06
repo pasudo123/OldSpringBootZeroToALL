@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(value = {"edu.doubler.todo", "edu.doubler.sample"})
+@ComponentScan(value = {"edu.doubler.*"})
 @SpringBootApplication
 public class SpringBootOnTodoApplication {
 
